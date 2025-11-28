@@ -5,23 +5,42 @@ export const navLinks = [
   },
   {
     title: "news",
-    path: "/news",
+    path: "tech-news",
   },
   {
     title: "AI",
-    path: "/ai",
+    path: "artificial-intelligence",
   },
   {
     title: "security",
-    path: "/security",
+    path: "security",
   },
   {
     title: "applications",
-    path: "/applications",
+    path: "applications",
   },
 
   {
     title: " Jobs",
-    path: "/jobs",
+    path: "tech-jobs",
+  },
+];
+
+export const footerLinks = [
+  {
+    title: "home",
+    path: "/",
+  },
+  {
+    title: "about",
+    path: "about",
+  },
+  {
+    title: "contact",
+    path: "contact",
+  },
+  {
+    title: "privacy policy",
+    path: "privacy-policy",
   },
 ];

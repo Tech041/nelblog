@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className={lato.className}>
         <Navbar />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

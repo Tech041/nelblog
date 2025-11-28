@@ -3,7 +3,7 @@ import Container from "./Container";
 
 const Hero = () => {
   return (
-    <section className="py-12">
+    <section className="py-5">
       <Container>
         <div className="relative w-full h-[650px] lg:h-[438px]">
           {/* Hero Image */}
