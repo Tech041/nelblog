@@ -10,18 +10,17 @@ const Footer = () => {
 
   return (
     <header className=" w-full h-full text-black  ">
-      <div className=" w-full  lg:px-5">
+      <div className=" w-full ">
         {/* desktop */}
-        <div className="hidden md:block w-full h-full pt-3 lg:pt-5">
-          <div className="w-[22%] h-[0.25px] bg-gray-300 my-1" />
-          <div className="w-full   flex  flex-col justify-center  mt-2 bg-white">
-            <div className="w-full bg-black">
-              <nav className="w-full  text-white">
+        <div className="hidden md:block w-full h-full">
+          <div className="w-full   flex  flex-col justify-center bg-white">
+            <div className="w-full bg-orange-400">
+              <nav className="w-full flex justify-center  text-white">
                 <ul className="flex gap-3">
                   {footerLinks.map((link) => (
                     <li
                       key={link.title}
-                      className="uppercase text-sm font-semibold hover:bg-orange-400 hover:text-white px-5 py-3"
+                      className="uppercase text-[10px] font-light hover:bg-orange-400 hover:text-white px-5 py-3"
                     >
                       <Link href={`/category/${link.path}`}>{link.title}</Link>
                     </li>
