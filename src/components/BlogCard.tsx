@@ -4,7 +4,7 @@ import { LuClock4 } from "react-icons/lu";
 
 const BlogCard = () => {
   return (
-    <div className="w-full lg:max-w-[327px] max-h-[110px]  flex gap-2 my-5 border-b pb-3 border-b-gray-200 ">
+    <div className="w-full lg:max-w-[327px] max-h-[110px]  flex gap-2 my-10 border-b pb-3 border-b-gray-200 ">
       <div className="w-20 h-[60px]  relative">
         <Image src={"/images/hero_img.png"} fill alt="Blog thumbnail" />
       </div>

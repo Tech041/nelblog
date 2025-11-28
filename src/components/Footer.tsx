@@ -22,7 +22,7 @@ const Footer = () => {
                       key={link.title}
                       className="uppercase text-[10px] font-light hover:bg-orange-400 hover:text-white px-5 py-3"
                     >
-                      <Link href={`/category/${link.path}`}>{link.title}</Link>
+                      <Link href={link.path}>{link.title}</Link>
                     </li>
                   ))}
                 </ul>
@@ -58,7 +58,7 @@ const Footer = () => {
                     key={link.path}
                     className="py-2 font-semibold text-white text-sm"
                   >
-                    <Link href={`/category/${link.path}`}>{link.title}</Link>
+                    <Link href={link.path}>{link.title}</Link>
                   </li>
                 ))}
               </ul>
