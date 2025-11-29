@@ -9,7 +9,7 @@ body {
   background-color: white;
 }
 li::marker {
-  color: #fb923c; 
+  color: #fb923c;
 }
 
 @theme inline {
@@ -21,12 +21,7 @@ li::marker {
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
+  
 
-  /* colors */
-  --color-sqanDark: #304659;
-  --color-sqanGreen: #32ba77;
-  --color-sqanCream: #fffae7;
-  --color-sqanBlue: #a6dffc;
-  --color-sqanGray: #f3f4f6;
+  
 }

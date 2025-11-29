@@ -11,24 +11,27 @@ const Navbar = () => {
   const { isMobileNavOpen, toggleMobileNav } = useUiStore();
 
   return (
-    <header className=" w-full  text-black ">
+    <header className=" w-full  text-black mb-5 ">
       <div className="min-h-[202px] w-full  lg:px-5">
         {/* desktop */}
         <div className="hidden md:block w-full h-full pt-3 lg:pt-5">
           <div className="w-full h-[50%] ">
             <Link href={"/"}>
               <Image
-                src={"/images/blog_logo.webp"}
+                src={"/images/site_logo.webp"}
                 width={150}
                 height={82}
                 alt="Logo"
               />
             </Link>
-            <p className="italic text-orange-500">
-              Serving you with latest tech news
+            <p className="italic text-sm text-black/50">
+              Serving you with latest health-tech gists
             </p>
           </div>
-          <div className="w-[22%] h-[0.25px] bg-gray-300 my-1" />
+          <div className="w-[23%] h-[0.25px] bg-gray-300 my-1" />
+          <div className=" uppercase text-xs lg:text-sm font-semibold  text-orange-400 mt-3  ">
+            Latest tech news and opportunities across the globe
+          </div>
           <div className="w-full   flex  flex-col justify-center  mt-2 bg-white">
             <div className="w-full bg-black">
               <nav className="w-full  text-white">
@@ -98,7 +101,7 @@ const Navbar = () => {
             <div className=" relative">
               <Link className="" href={"/"}>
                 <Image
-                  src={"/images/blog_logo.webp"}
+                  src={"/images/site_logo.webp"}
                   width={150}
                   height={82}
                   alt="Logo"

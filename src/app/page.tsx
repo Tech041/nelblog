@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 
 const Home = () => {
   return (
-    <main className="shadow-xl">
+    <main className="shadow-2xl min-h-screen">
       <Hero />
       <Categories />
     </main>

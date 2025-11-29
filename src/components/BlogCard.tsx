@@ -10,7 +10,7 @@ const BlogCard = () => {
       </div>
       <div className="flex-1 ">
         <Link
-          href={"#"}
+          href={"/jsjsjdsd"}
           className="text-[14px] font-semibold text-black hover:text-orange-400 line-clamp-3"
         >
           Sochima Ezeoke Sparks Debate After Claiming She Lost Movie Role for
