@@ -1,3 +1,4 @@
+import Comment from "@/components/Comment";
 import Container from "@/components/Container";
 import RelatedPostsCard from "@/components/RelatedPostsCard";
 import SocialIcons from "@/components/SocialIcons";
@@ -98,7 +99,7 @@ const BlogDetailsPage = () => {
           </div>
           {/* social icons */}
           <SocialIcons />
-          <div className="w-full  flex items-center bg-gray-200 p-2 ">
+          <div className="w-full  flex items-center bg-gray-200 px-2 py-1 ">
             <p className="font-semibold text-orange-400">Related Articles</p>
           </div>
 
@@ -108,6 +109,8 @@ const BlogDetailsPage = () => {
             <RelatedPostsCard />
             <RelatedPostsCard />
           </div>
+          {/* comments */}
+          <Comment />
         </div>
       </Container>
     </main>
