@@ -1,10 +1,9 @@
 import Container from "@/components/Container";
+import RelatedPostsCard from "@/components/RelatedPostsCard";
+import SocialIcons from "@/components/SocialIcons";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { BsPersonFill } from "react-icons/bs";
-import { FaInstagramSquare, FaTwitter, FaYoutube } from "react-icons/fa";
-import { GrFacebookOption } from "react-icons/gr";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { LuClock4 } from "react-icons/lu";
 
@@ -98,36 +97,17 @@ const BlogDetailsPage = () => {
             </p>
           </div>
           {/* social icons */}
-          <div className="w-full  flex flex-col sm:flex-row sm:justify-between gap-4 my-5 bg-gray-200 p-2">
-            <Link
-              href={"#"}
-              className="bg-blue-600 h-9 flex-1 py-1.5 sm:py-0 flex items-center justify-center"
-            >
-              <GrFacebookOption className="text-white text-2xl " />
-            </Link>
-            <Link
-              href={"#"}
-              className="bg-red-300 h-9 flex-1 py-1.5 sm:py-0 flex items-center justify-center"
-            >
-              <FaInstagramSquare className="text-white text-2xl " />
-            </Link>
-            <Link
-              href={"#"}
-              className="bg-blue-400 h-9 flex-1 py-1.5 sm:py-0 flex items-center justify-center"
-            >
-              <FaTwitter className="text-white text-2xl" />
-            </Link>
-            <Link
-              href={"#"}
-              className="bg-red-500 h-9 flex-1 py-1.5 sm:py-0 flex items-center justify-center"
-            >
-              <FaYoutube className="text-white text-2xl" />
-            </Link>
-          </div>
+          <SocialIcons />
           <div className="w-full  flex items-center bg-gray-200 p-2 ">
             <p className="font-semibold text-orange-400">Related Articles</p>
           </div>
-          
+
+          {/* Related posts */}
+          <div className="w-full flex flex-col md:flex-row md:items-center md:justify-between gap-3 mt-4">
+            <RelatedPostsCard />
+            <RelatedPostsCard />
+            <RelatedPostsCard />
+          </div>
         </div>
       </Container>
     </main>
