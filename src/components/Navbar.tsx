@@ -65,7 +65,7 @@ const Navbar = () => {
         {/* mobile */}
 
         <div className="w-full md:hidden">
-          <div className=" w-full h-11 flex items-center justify-between bg-orange-400 border-b border-b-black text-white">
+          <div className=" w-full h-11 flex items-center justify-between bg-orange-400 border-b border-b-black/50 text-white">
             <div className="flex-1"></div>
             <div className="flex-1 flex justify-end gap-2 items-center px-3  ">
               <span className="font-bold">Menu</span>

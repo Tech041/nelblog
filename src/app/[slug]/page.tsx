@@ -12,7 +12,7 @@ const BlogDetailsPage = () => {
   return (
     <main className="min-h-screen mt-5  shadow-2xl bg-white">
       <Container>
-        <div className="w-full h-full md:w-[70%] pb-6 ">
+        <div className="w-full h-full md:w-[70%] pb-6 pt-3 ">
           <div className="w-full border-t border-b py-2 border-t-gray-100 border-b-gray-100 ">
             <div className="w-full text-gray-300 text-sm">
               <Link href="#" className="inline mr-2 font-semibold">
