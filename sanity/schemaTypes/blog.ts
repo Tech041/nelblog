@@ -33,11 +33,12 @@ export default {
       title: 'Blog category',
       options: {
         list: [
-          {title: 'Technology', value: 'technology'},
-          {title: 'Lifestyle', value: 'lifestyle'},
-          {title: 'Travel', value: 'travel'},
-          {title: 'Food', value: 'food'},
-          {title: 'Business', value: 'business'},
+          {title: 'Tech-news', value: 'tech-news'},
+          {title: 'Security', value: 'security'},
+          {title: 'Artificial-intelligence', value: 'artificial-intelligence'},
+          {title: 'Applications', value: 'applications'},
+          {title: 'Jobs', value: 'jobs'},
+          {title: 'Health-tech', value: 'health-tech'},
         ],
       },
       validation: (Rule: Rule) => Rule.required().error('Select a category for this blog'),
