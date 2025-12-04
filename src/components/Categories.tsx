@@ -1,9 +1,25 @@
 import Link from "next/link";
 import Container from "./Container";
 import BlogCard from "./BlogCard";
+import { client } from "@/app/lib/sanity";
 const headingStyle = " uppercase border-b-3 font-semibold border-b-orange-400";
+async function getData() {
+  const query = `
+  *[_type == 'blog'] | order(_publishedAt desc){
+title,
+"currentSlug":slug.current,
+category,
+ titleImage, 
+publishedAt
+}`;
 
-const Categories = () => {
+  const data = await client.fetch(query);
+  return data;
+}
+
+const Categories = async () => {
+  const data = await getData();
+  console.log("Data is", data);
   return (
     <section className="bg-white py-5">
       <Container>
@@ -17,7 +33,6 @@ const Categories = () => {
             <BlogCard />
             <BlogCard />
             <BlogCard />
-          
           </div>
           <div className="">
             <h1 className={headingStyle}>
