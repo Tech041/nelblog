@@ -1,29 +1,49 @@
 import CategoryCard from "@/components/CategoryCard";
 import Container from "@/components/Container";
-import React from "react";
+import { formatDate } from "@/lib/formatDate";
+import { blogCategoryCardProp } from "@/lib/interface";
+import { client, urlFor } from "@/lib/sanity";
+import { PortableText } from "@portabletext/react";
 
-const Categories = () => {
+async function fetchByCategory(slug: string) {
+  const query = `
+   *[_type == "blog" && category == "${slug}"]
+  | order(publishedAt desc) {
+    title,
+    "currentSlug": slug.current,
+    titleImage,
+    content,
+    publishedAt
+} `;
+  const data = await client.fetch(query);
+  return data;
+}
+
+const Categories = async ({ params }: { params: { slug: string } }) => {
+  const { slug } = await params;
+  const data: blogCategoryCardProp[] = await fetchByCategory(slug);
+  console.log("Data is", data);
+  console.log("Params is", slug);
+
   return (
     <main className="min-h-screen w-full">
       <Container>
-        <div className="w-full  h-full md:w-[70%] pb-6">
-          <div className="w-full  flex items-center bg-gray-200 px-2 py-4 ">
-            <p className="font-semibold text-orange-400">Tech News</p>
+        {data.map((item, index) => (
+          <div key={index} className="w-full  h-full md:w-[70%] pb-6">
+            <div className="w-full  flex items-center bg-gray-200 px-2 py-4 ">
+              <p className="font-semibold text-orange-400">{item.category}</p>
+            </div>
+            {/* Cards */}
+            <CategoryCard
+              key={index}
+              href={item.currentSlug}
+              title={item.title}
+              content={<PortableText value={item.content} />}
+              publishedAt={formatDate(item.publishedAt)}
+              src={urlFor(item.titleImage).url()}
+            />
           </div>
-          {/* Cards */}
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
-        </div>
+        ))}
       </Container>
     </main>
   );

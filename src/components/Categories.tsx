@@ -10,7 +10,7 @@ export const revalidate = 60; // Revalidate every 60 seconds
 
 async function getData() {
   const query = `
-  *[_type == 'blog'] | order(_publishedAt desc){
+  *[_type == 'blog'] | order(publishedAt desc){
 title,
 "currentSlug":slug.current,
 category,

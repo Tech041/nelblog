@@ -1,8 +1,30 @@
 import Image from "next/image";
 import Container from "./Container";
 import Link from "next/link";
+import { blogCardProp, fetchDataProp } from "@/lib/interface";
+import { client } from "@/lib/sanity";
 
-const Hero = () => {
+export const revalidate = 60; // Revalidate every 60 seconds
+
+async function fetchData() {
+  const query = `
+  *[_type == 'blog'] | order(publishedAt desc){
+title,
+"currentSlug":slug.current,
+category,
+titleImage, 
+content,
+publishedAt
+}`;
+
+  const data = await client.fetch(query);
+  return data;
+}
+
+const Hero = async () => {
+  const data: fetchDataProp[] = await fetchData();
+
+  console.log("FETCHED DATA", data);
   return (
     <section className="">
       <Container>

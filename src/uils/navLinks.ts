@@ -22,7 +22,7 @@ export const navLinks = [
 
   {
     title: " Jobs",
-    path: "tech-jobs",
+    path: "jobs",
   },
 ];
 

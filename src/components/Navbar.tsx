@@ -41,7 +41,13 @@ const Navbar = () => {
                       key={link.title}
                       className="uppercase text-sm font-semibold hover:bg-orange-400 hover:text-white px-5 py-3"
                     >
-                      <Link href={`/category/${link.path}`}>{link.title}</Link>
+                      <Link
+                        href={
+                          link.title === "home" ? "/" : `/category/${link.path}`
+                        }
+                      >
+                        {link.title}
+                      </Link>
                     </li>
                   ))}
                 </ul>
