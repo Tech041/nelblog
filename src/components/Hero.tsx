@@ -27,7 +27,7 @@ const Hero = async () => {
   return (
     <section className="">
       <Container>
-        <div className="relative w-full h-[650px] lg:h-[438px]">
+        <div className="relative w-full h-[400px] lg:h-[438px]">
           {/* Hero Image */}
           <Link className="w-full h-full" href={`/${data.currentSlug}`}>
             <Image
