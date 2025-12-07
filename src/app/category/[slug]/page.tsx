@@ -27,12 +27,12 @@ const Categories = async ({ params }: { params: { slug: string } }) => {
   return (
     <main className="min-h-screen w-full">
       <Container>
-        {data.map((item, index) => (
-          <div key={index} className="w-full  h-full md:w-[70%] pb-6">
-            <div className="w-full  flex items-center bg-gray-200 px-2 py-4 ">
-              <p className="font-semibold text-orange-400">{item.category}</p>
-            </div>
-            {/* Cards */}
+        <div className="w-full  h-full md:w-[70%] pb-6">
+          <div className="w-full  flex items-center bg-gray-200 p-2 ">
+            <p className="font-semibold text-orange-400 capitalize">{slug}</p>
+          </div>
+          {/* Cards */}
+          {data.map((item, index) => (
             <CategoryCard
               key={index}
               href={item.currentSlug}
@@ -41,8 +41,8 @@ const Categories = async ({ params }: { params: { slug: string } }) => {
               publishedAt={formatDate(item.publishedAt)}
               src={urlFor(item.titleImage).url()}
             />
-          </div>
-        ))}
+          ))}
+        </div>
       </Container>
     </main>
   );
