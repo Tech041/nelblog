@@ -2,7 +2,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { navLinks } from "@/uils/navLinks";
-import { IoMdArrowRoundForward } from "react-icons/io";
 import { IoCloseSharp } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useUiStore } from "@/store/uiStore";
@@ -18,7 +17,7 @@ const Navbar = () => {
           <div className="w-full h-[50%] ">
             <Link href={"/"}>
               <Image
-                src={"/images/site_logo.webp"}
+                src={"/images/logo_image.webp"}
                 width={150}
                 height={82}
                 alt="Logo"
@@ -53,7 +52,7 @@ const Navbar = () => {
                 </ul>
               </nav>
             </div>
-            <p className=" text-sm text-orange-400 flex items-center text-nowrap bg-[#F7F7F7] ">
+            {/* <p className=" text-sm text-orange-400 flex items-center text-nowrap bg-[#F7F7F7] ">
               <span className="bg-orange-400 text-white py-2 pl-5 pr-3 mr-4 flex items-center gap-1">
                 <span className="font-semibold">Latest update</span>{" "}
                 <IoMdArrowRoundForward
@@ -65,7 +64,7 @@ const Navbar = () => {
                 [ November 27, 2025 ] Nigerian Actress Seeks UK Asylum, Says
                 Fame Endangers Her Life After
               </span>
-            </p>
+            </p> */}
           </div>
         </div>
         {/* mobile */}
@@ -107,7 +106,7 @@ const Navbar = () => {
             <div className=" relative">
               <Link className="" href={"/"}>
                 <Image
-                  src={"/images/site_logo.webp"}
+                  src={"/images/logo_image.webp"}
                   width={150}
                   height={82}
                   alt="Logo"

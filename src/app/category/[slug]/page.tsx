@@ -4,6 +4,7 @@ import { formatDate } from "@/lib/formatDate";
 import { blogCategoryCardProp } from "@/lib/interface";
 import { client, urlFor } from "@/lib/sanity";
 import { PortableText } from "@portabletext/react";
+export const revalidate = 300; // Revalidate every 5 minutes
 
 async function fetchByCategory(slug: string) {
   const query = `
@@ -22,8 +23,6 @@ async function fetchByCategory(slug: string) {
 const Categories = async ({ params }: { params: { slug: string } }) => {
   const { slug } = await params;
   const data: blogCategoryCardProp[] = await fetchByCategory(slug);
-  console.log("Data is", data);
-  console.log("Params is", slug);
 
   return (
     <main className="min-h-screen w-full">

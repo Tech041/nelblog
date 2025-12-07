@@ -67,7 +67,7 @@ const Footer = () => {
         </div>
         <div className="w-full h-[41px] bg-black text-white flex items-center justify-center">
           <p className="text-center text-xs">
-            Copyright © {new Date().getFullYear()} PharmaTechGist Inc. All Rights
+            Copyright © {new Date().getFullYear()} NaijaJobsHub Inc. All Rights
             Reserved
           </p>
         </div>

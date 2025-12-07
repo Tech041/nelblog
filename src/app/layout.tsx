@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/images/site_logo.webp" type="image/webp" />
+        <link rel="icon" href="/images/logo_image.webp" type="image/webp" />
         {/* You can also use PNG or SVG */}
         {/* <link rel="icon" href="/favicon.png" type="image/png" /> */}
       </head>

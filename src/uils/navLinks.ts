@@ -4,25 +4,29 @@ export const navLinks = [
     path: "/",
   },
   {
-    title: "news",
-    path: "tech-news",
+    title: "Technology",
+    path: "technology",
   },
   {
-    title: "AI",
-    path: "artificial-intelligence",
+    title: "Health",
+    path: "health",
   },
   {
-    title: "security",
-    path: "security",
+    title: "Finance",
+    path: "finance",
   },
   {
-    title: "applications",
-    path: "applications",
+    title: "Education",
+    path: "education",
   },
 
   {
-    title: " Jobs",
-    path: "jobs",
+    title: "Public Sector",
+    path: "public-sector",
+  },
+  {
+    title: "Extra",
+    path: "extra",
   },
 ];
 

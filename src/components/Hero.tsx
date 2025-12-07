@@ -1,14 +1,15 @@
 import Image from "next/image";
 import Container from "./Container";
 import Link from "next/link";
-import { blogCardProp, fetchDataProp } from "@/lib/interface";
-import { client } from "@/lib/sanity";
+import { fetchDataProp } from "@/lib/interface";
+import { client, urlFor } from "@/lib/sanity";
+import { PortableText } from "@portabletext/react";
 
-export const revalidate = 60; // Revalidate every 60 seconds
+export const revalidate = 300; // Revalidate every 5 minutes
 
 async function fetchData() {
   const query = `
-  *[_type == 'blog'] | order(publishedAt desc){
+  *[_type == 'blog'] | order(publishedAt desc)[0]{
 title,
 "currentSlug":slug.current,
 category,
@@ -22,18 +23,16 @@ publishedAt
 }
 
 const Hero = async () => {
-  const data: fetchDataProp[] = await fetchData();
-
-  console.log("FETCHED DATA", data);
+  const data: fetchDataProp = await fetchData();
   return (
     <section className="">
       <Container>
         <div className="relative w-full h-[650px] lg:h-[438px]">
           {/* Hero Image */}
-          <Link className="w-full h-full" href={""}>
+          <Link className="w-full h-full" href={`/${data.currentSlug}`}>
             <Image
-              src="/images/hero_img.png"
-              alt="Hero Image"
+              src={urlFor(data.titleImage).url()}
+              alt={data.title}
               fill
               className="object-cover"
               priority
@@ -41,24 +40,20 @@ const Hero = async () => {
           </Link>
 
           {/* Overlay at bottom */}
-          <div className="absolute bottom-0 left-0 right-0 h-[450px] lg:h-[280px] px-3 md:px-5 bg-black/70 flex items-center justify-center text-white">
+          <div className="absolute bottom-0 left-0 right-0 h-[200px] lg:h-[180px] px-3 md:px-5 bg-black/70 flex items-center justify-center text-white">
             {/* Title */}
             <div className="">
               <Link
-                href={""}
-                className="text-xl md:text-2xl font-semibold line-clamp-2"
+                href={`/${data.currentSlug}`}
+                className="text-2xl md:text-3xl font-semibold line-clamp-2"
               >
-                She Said She Was Going to Ibadan’- Mother of 3 kidnapped in
-                Abuja on her way to boyfriend’s house
+                {data.title}
               </Link>
               {/* First two line */}
-              <p className="text-sm md:text-base font-light line-clamp-2">
-                A mother of three was reportedly abducted in Abuja after
-                secretly traveling there to meet her boyfriend, having told her
-                husband she was going to Ibadan. Kidnappers are demanding a ₦50
-                million ransom. The boyfriend
-              </p>
-              <ol className="pl-5 mt-3  ">
+              <div className="mt-3 text-lg md:text-base font-light line-clamp-3">
+                <PortableText value={data.content} />
+              </div>
+              {/* <ol className="pl-5 mt-3  ">
                 <Link href={""}>
                   <li className="list-disc  py-1  ">
                     Bride’s Heartwarming Hug With Fola Steals The Show At
@@ -83,7 +78,7 @@ const Hero = async () => {
                     Million Ransom
                   </li>
                 </Link>
-              </ol>
+              </ol> */}
             </div>
           </div>
         </div>
