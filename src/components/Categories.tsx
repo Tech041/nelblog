@@ -48,13 +48,13 @@ const Categories = async () => {
           </div>
           <div className="">
             <h1 className={headingStyle}>
-              <Link href={"/category/artificial-intelligence"}>
+              <Link href={"/category/health"}>
                 Health
               </Link>
             </h1>
             {data
               .slice()
-              .filter((d) => d.category === "artificial-intelligence")
+              .filter((d) => d.category === "health")
               .slice(0, 6)
               .map((item, index) => (
                 <BlogCard
@@ -68,11 +68,11 @@ const Categories = async () => {
           </div>
           <div className="">
             <h1 className={headingStyle}>
-              <Link href={"/category/security"}>Finance</Link>
+              <Link href={"/category/finance"}>Finance</Link>
             </h1>
             {data
               .slice()
-              .filter((d) => d.category === "security")
+              .filter((d) => d.category === "finance")
               .slice(0, 6)
               .map((item, index) => (
                 <BlogCard
@@ -86,11 +86,11 @@ const Categories = async () => {
           </div>
           <div className="">
             <h1 className={headingStyle}>
-              <Link href={"/category/applications"}>Education</Link>
+              <Link href={"/category/education"}>Education</Link>
             </h1>
             {data
               .slice()
-              .filter((d) => d.category === "applications")
+              .filter((d) => d.category === "education")
               .slice(0, 6)
               .map((item, index) => (
                 <BlogCard
@@ -104,11 +104,11 @@ const Categories = async () => {
           </div>
           <div className="">
             <h1 className={headingStyle}>
-              <Link href={"/category/tech-jobs"}>Public Sector </Link>
+              <Link href={"/category/public-sector"}>Public Sector </Link>
             </h1>
             {data
               .slice()
-              .filter((d) => d.category === "jobs")
+              .filter((d) => d.category === "public-sector")
               .slice(0, 6)
               .map((item, index) => (
                 <BlogCard
@@ -122,11 +122,11 @@ const Categories = async () => {
           </div>
           <div className="">
             <h1 className={headingStyle}>
-              <Link href={"/category/health-tech"}>Extra </Link>
+              <Link href={"/category/extra"}>Extra </Link>
             </h1>
             {data
               .slice()
-              .filter((d) => d.category === "health-tech")
+              .filter((d) => d.category === "extra")
               .slice(0, 6)
               .map((item, index) => (
                 <BlogCard
