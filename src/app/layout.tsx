@@ -10,8 +10,8 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "PharmaTechGist",
-  description: "We carry the latest health-news for you anytime",
+  title: "NaijaJobsHub",
+  description: "We carry the latest job opportunities for you anytime",
 };
 
 export default function RootLayout({
