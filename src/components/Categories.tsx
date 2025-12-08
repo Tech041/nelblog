@@ -6,8 +6,6 @@ import { blogCardProp } from "@/lib/interface";
 import { formatDate } from "@/lib/formatDate";
 const headingStyle = " uppercase border-b-3 font-semibold border-b-orange-400";
 
-export const revalidate = 300; // Revalidate every 5 minutes
-
 async function getData() {
   const query = `
   *[_type == 'blog'] | order(publishedAt desc){
@@ -18,7 +16,8 @@ category,
 publishedAt
 }`;
 
-  const data = await client.fetch(query);
+  const data = await client.fetch(query, {}, { next: { revalidate: 300 } });
+
   return data;
 }
 
@@ -48,9 +47,7 @@ const Categories = async () => {
           </div>
           <div className="">
             <h1 className={headingStyle}>
-              <Link href={"/category/health"}>
-                Health
-              </Link>
+              <Link href={"/category/health"}>Health</Link>
             </h1>
             {data
               .slice()

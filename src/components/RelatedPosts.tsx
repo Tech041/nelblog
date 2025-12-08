@@ -2,8 +2,6 @@ import { blogCardProp } from "@/lib/interface";
 import { client, urlFor } from "@/lib/sanity";
 import RelatedPostsCard from "./RelatedPostsCard";
 
-export const revalidate = 300; // Revalidate every 5 minutes
-
 async function getRelatedData() {
   const query = `
   *[_type == 'blog'] | order(publishedAt desc)[0...3]{
@@ -14,7 +12,8 @@ category,
 publishedAt
 }`;
 
-  const data = await client.fetch(query);
+  const data = await client.fetch(query, {}, { next: { revalidate: 300 } });
+
   return data;
 }
 

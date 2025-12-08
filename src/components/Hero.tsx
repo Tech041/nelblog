@@ -5,7 +5,6 @@ import { fetchDataProp } from "@/lib/interface";
 import { client, urlFor } from "@/lib/sanity";
 import { PortableText } from "@portabletext/react";
 
-export const revalidate = 300; // Revalidate every 5 minutes
 
 async function fetchData() {
   const query = `
@@ -18,9 +17,9 @@ content,
 publishedAt
 }`;
 
-  // const data = await client.fetch(query);
 
-  const data = await client.fetch(query, {}, { next: { revalidate: 120 } });
+
+  const data = await client.fetch(query, {}, { next: { revalidate: 300 } });
 
   return data;
 }

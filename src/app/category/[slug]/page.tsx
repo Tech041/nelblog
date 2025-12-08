@@ -4,7 +4,6 @@ import { formatDate } from "@/lib/formatDate";
 import { blogCategoryCardProp } from "@/lib/interface";
 import { client, urlFor } from "@/lib/sanity";
 import { PortableText } from "@portabletext/react";
-export const revalidate = 300; // Revalidate every 5 minutes
 
 async function fetchByCategory(slug: string) {
   const query = `
@@ -16,7 +15,9 @@ async function fetchByCategory(slug: string) {
     content,
     publishedAt
 } `;
-  const data = await client.fetch(query);
+
+  const data = await client.fetch(query, {}, { next: { revalidate: 300 } });
+
   return data;
 }
 

@@ -26,7 +26,12 @@ async function getBlogDetails(slug: string) {
 }[0]
 `;
 
-  const data = await client.fetch(query);
+  const data = await client.fetch(
+    query,
+    {},
+    { next: { revalidate: 12 * 60 * 60 } }
+  );
+
   return data;
 }
 
@@ -34,7 +39,7 @@ const BlogDetailsPage = async ({ params }: { params: { slug: string } }) => {
   const { slug } = await params;
   const data: blogDetailsCardProp = await getBlogDetails(slug);
   if (!data) {
-    notFound(); 
+    notFound();
   }
 
   return (
