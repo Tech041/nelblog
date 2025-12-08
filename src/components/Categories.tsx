@@ -6,7 +6,7 @@ import { blogCardProp } from "@/lib/interface";
 import { formatDate } from "@/lib/formatDate";
 const headingStyle = " uppercase border-b-3 font-semibold border-b-orange-400";
 
-export const revalidate = 300; // Revalidate every 60 seconds
+export const revalidate = 300; // Revalidate every 5 minutes
 
 async function getData() {
   const query = `

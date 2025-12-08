@@ -24,12 +24,12 @@ const Navbar = () => {
               />
             </Link>
             <p className="italic text-sm text-black/50">
-              Serving you with latest health-tech gists
+              Serving you with latest job updates.
             </p>
           </div>
           <div className="w-[23%] h-[0.25px] bg-gray-300 my-1" />
           <div className=" uppercase text-xs lg:text-sm font-semibold  text-orange-400 mt-3  ">
-            Latest tech news and opportunities across the globe
+            Latest job opportunities across naija
           </div>
           <div className="w-full   flex  flex-col justify-center  mt-2 bg-white">
             <div className="w-full bg-black">
@@ -117,7 +117,7 @@ const Navbar = () => {
           </div>
           <div className="max-w-[426px] mx-auto h-[0.25px] bg-gray-300" />
           <div className="max-w-[426px] mx-auto uppercase text-xs lg:text-sm font-semibold  text-orange-400 mt-3 px-3 text-center ">
-            Latest tech news and opportunities across the globe
+            Latest job opportunities across naija
           </div>
         </div>
       </div>

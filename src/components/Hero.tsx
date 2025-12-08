@@ -18,7 +18,10 @@ content,
 publishedAt
 }`;
 
-  const data = await client.fetch(query);
+  // const data = await client.fetch(query);
+
+  const data = await client.fetch(query, {}, { next: { revalidate: 120 } });
+
   return data;
 }
 
