@@ -20,7 +20,7 @@ const RelatedPostsCard = ({href,title,publishedAt,src}:RelatedPostsCardProp) => 
       </Link>
       <div className="flex-1  h-auto md:h-[137px] ">
         <Link
-          href={"/jsjsjdsd"}
+          href={href}
           className="text-[14px] md:text-lg font-semibold text-black hover:text-orange-400 line-clamp-3"
         >
          {title}
