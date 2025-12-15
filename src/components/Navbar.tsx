@@ -95,7 +95,13 @@ const Navbar = () => {
                     key={link.path}
                     className="py-2 font-semibold text-white text-sm"
                   >
-                    <Link href={`/category/${link.path}`}>{link.title}</Link>
+                    <Link
+                      href={
+                        link.title === "home" ? "/" : `/category/${link.path}`
+                      }
+                    >
+                      {link.title}
+                    </Link>
                   </li>
                 ))}
               </ul>

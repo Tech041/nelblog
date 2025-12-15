@@ -45,6 +45,6 @@ export const footerLinks = [
   },
   {
     title: "privacy policy",
-    path: "privacy-policy",
+    path: "privacy",
   },
 ];
